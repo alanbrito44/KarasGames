@@ -35,7 +35,7 @@
                 <a href="login.php" class="px-3 border-end border-start btn btn-dark">Login</a>
                 <a href="" class="px-3 border-end btn btn-dark">Whishlist (0)</a>
                 <?php if(isset($_SESSION["user"])) :?>
-                <a class="ms-3 btn btn-outline-danger" href="login.php?cerrar=true" class="btn btn-danger">Cerrar Sesion</a>
+                <a class="ms-3 btn btn-outline-danger" href="login.php?cerrar=true" class="btn btn-danger">Close sesion</a>
                 <?php echo $usua = $_SESSION["user"]; ?>
                 <?php endif?>
             </div>
