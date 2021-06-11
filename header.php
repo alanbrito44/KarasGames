@@ -32,7 +32,9 @@
         <div class="strip d-flex justify-content-between px-4 bg-light">
             <p class="font-baskerville font-size-12 text-black-50 m-0">pagina creada por el grupo mera verga en salga</p>
             <div class="font-baskerville font-size-12">
+                <?php if(!isset($_SESSION["user"])) :?>
                 <a href="login.php" class="px-3 border-end border-start btn btn-dark">Login</a>
+                <?php endif?>
                 <a href="" class="px-3 border-end btn btn-dark">Whishlist (0)</a>
                 <?php if(isset($_SESSION["user"])) :?>
                 <a class="ms-3 btn btn-outline-danger" href="login.php?cerrar=true" class="btn btn-danger">Close sesion</a>

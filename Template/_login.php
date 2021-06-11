@@ -45,6 +45,8 @@ if(isset($_REQUEST["cerrar"])){
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--Custom CSS File-->
+    <link rel="stylesheet" href="LoginStyle.css">
 </head>
 <body>
 	<div class="container-fluid">
@@ -52,7 +54,7 @@ if(isset($_REQUEST["cerrar"])){
 			<div class="col-lg-6 col-md-6 form-container">
 				<div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
 					<div class="logo mt-5 mb-3">
-						<img src="../img/icono.png" width="150px">
+						<img src="./assets/empty_cart.png" width="150px">
 					</div>
 					<div class="heading mb-3">
 						<h4>Inicia sesion con tu cuenta</h4>
