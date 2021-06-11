@@ -10,6 +10,8 @@
         $usua = $_SESSION["user"];
         $rol = $_SESSION["rol"];
     }
+
+    //probando
 ?>
 
 <?php
