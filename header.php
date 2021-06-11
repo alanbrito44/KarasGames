@@ -56,7 +56,7 @@
                             <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Categorias</a>
+                            <a class="nav-link" href="categories.php">Categorias</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Productos</a>

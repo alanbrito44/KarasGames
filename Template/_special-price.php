@@ -21,7 +21,7 @@
 ?>
 <!--Special price-->
     <section id="special-price"> 
-        <div class="container-fluid">
+        <div class="container">
             <h4 class="font-baskerville font-size-20 mt-5">Special Price</h4>
             <hr>
             <div id="filters" class="button-group text-end font-baskerville font-size-16">
@@ -63,7 +63,7 @@
                                                 if(in_array($item['juego_id'], $in_cart ?? [])){
                                                     echo '<button type="submit" disabled class="btn btn-success">Comprar ahora</button>';
                                                 }else{
-                                                    echo '<button type="submit" name="top_sale_submit" class="btn btn-primary">Comprar ahora</button>';
+                                                    echo '<button type="submit" name="special_price_submit" class="btn btn-primary">Comprar ahora</button>';
                                                 }
                                             ?>  
                                         </form>
