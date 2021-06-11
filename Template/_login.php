@@ -3,11 +3,13 @@
 if($_POST){
     $usua =$_POST["txtUsua"];
     $pass = $_POST["txtPass"];
-    $rol = $usur->autenticar($usua, $pass);//identificando rol segun sentencia sql
+    $rol = $usur->autenticar($usua, $pass);
+
+	$_SESSION["id"] = $id;
 
     if(!isset($_COOKIE["bloqueado".$usua])){
         if($rol != ""){
-            $_SESSION["user"]=$usua;
+            $_SESSION["user"] = $usua;
             $_SESSION["rol"] = $rol;
             echo "<script>alert('Inicio de sesion con $usua exito');
                 window.location.href='index.php';</script>";
@@ -17,7 +19,7 @@ if($_POST){
                 $contador++;
                 setcookie($usua,$contador,time()+60*60);
                 if($contador > 3){
-                    setcookie("bloqueado".$usua ,0,time()+ 60);// 60 este valor va cambiar dependiendo del tiempo que querramos bloquearlo
+                    setcookie("bloqueado".$usua ,0,time()+ 60);
                 }
             }else{
                 setcookie($usua,1, time()+ 60*60);

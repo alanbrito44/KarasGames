@@ -106,8 +106,8 @@ class Cart{
     public function buyGames($juego_id = null, $information  = "carrito", $information2 = "productos"){
         if($juego_id != null){
             $query = "INSERT INTO historial SELECT '',a.cart_id, a.usuario_id, b.juego_id, b.juego_distribuidora, b.juego_nombre, b.juego_precio, b.juego_imagen, b.categoria_id
-            from {$information2} b INNER JOIN {$information} a ON a.juego_id = b.juego_id where a.juego_id = {$juego_id};";
-            $query .= "DELETE FROM {$information} WHERE juego_id = {$juego_id};";
+            from {$information2} b INNER JOIN {$information} a ON a.juego_id = b.juego_id WHERE a.usuario_id = {$juego_id};";
+            $query .= "DELETE FROM carrito WHERE usuario_id = {$juego_id};";
             echo $query;
             //ejecutando multiples querys
             $result = $this->db->con->multi_query($query);

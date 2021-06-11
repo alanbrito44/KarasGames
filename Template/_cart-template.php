@@ -1,4 +1,5 @@
-    <?php 
+    <?php
+        $usuario = 1;
         if($_SERVER['REQUEST_METHOD']=='POST'){
             if(isset($_POST['delete_cart_submit'])){
                 $deleteRecord = $cart->deleteCart($_POST['juego_id']);
@@ -11,7 +12,7 @@
             
             //realizando compra de juegos
             if(isset($_POST['buy-submit'])){
-                $cart->buyGames($_POST['juego_id']);
+                $cart->buyGames($usuario);
             }
         }
     ?>

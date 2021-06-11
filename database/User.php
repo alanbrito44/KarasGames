@@ -18,7 +18,6 @@ class User{
         return $result;
     }
 
-
 }
 
 ?>
