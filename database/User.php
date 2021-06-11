@@ -25,6 +25,18 @@ class User{
         return $result;
     }
 
+    public function idUsuario($usuario){
+        $query = "select usuario_id from usuario where nombre_usuario='$usuario'";
+        echo $query;
+        //ejecutando multiples querys
+        $result = $this->db->con->query($query);
+        while ($fila = mysqli_fetch_assoc($result)){
+            $id = $fila["usuario_id"];
+        }
+        return $id;
+    }
+
+
 }
 
 ?>

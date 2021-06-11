@@ -39,7 +39,7 @@
                                     </div>
                                     <form method="POST">
                                         <input type="hidden" name="juego_id" value="<?php echo $item['juego_id']??'1'; ?>">
-                                        <input type="hidden" name="usuario_id" value="<?php echo 1; ?>">
+                                        <input type="hidden" name="usuario_id" value="<?php echo $usuarioId = $_SESSION["id"]; ?>">
                                         <?php 
                                             if(in_array($item['juego_id'], $cart->getCardId($product->getData('carrito')) ?? [])){
                                                 echo '<button type="submit" disabled class="btn btn-success">Comprar ahora</button>';
