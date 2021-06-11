@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karsa Games</title>
+
+    <!--Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!--Owl Carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Custom CSS File-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <!--start #header-->
+    <header id="header">
+        <div class="strip d-flex justify-content-between px-4 bg-light">
+            <p class="font-baskerville font-size-12 text-black-50 m-0">pagina creada por el grupo mera verga en salga</p>
+            <div class="font-baskerville font-size-12">
+                <a href="" class="px-3 border-end border-start btn btn-dark">Login</a>
+                <a href="" class="px-3 border-end btn btn-dark">Whishlist (0)</a>
+            </div>
+        </div>
+
+        <!--navbar principal-->
+        <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Karsa Games</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav m-auto font-inconsolata">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Coming Soon</a>
+                        </li>
+                    </ul>
+                    <form action="" class="font-size-14 font-baskerville">
+                        <a href="" class="py-2 rounded-pill color-primary-bg btn">
+                            <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
+                            <span class="px-3 py-2 rounded-pill text-dark bg-light">0</span>
+                        </a>
+                        
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!--start #header-->
+
+    <!--start #main-site-->
+    <main id="main-site">
+        
+        <!--Shopping Cart Section-->
+        <section id="cart" class="py-3">
+            <div class="container-fluid w-75">
+                <h5 class="font-baskerville font-size-20">Shopping cart</h5>
+
+                <!--Shopping Cart items-->
+                <div class="row">
+                    <div class="col-sm-9">
+                        <!--Cart item--> 
+                        <div class="row border-top py-3 mt-3">
+                            <div class="col-sm-2">
+                                <img src="./img/catalogo/Disparos/rainbowxis.jpg" style="height: 120px;" alt="cart1" class="img-fluid rounded">
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="font-roboto font-size-20">Rainbow Six 2020</h5>
+                                <small>By Ubisoft</small>
+                                <!--Product Rating-->
+                                <div class="d-flex">
+                                    <div class="rating text-warning font-size-12">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                    </div>
+                                    <a href="#" class="px-2 font-baskerville font-size-14">20,534 rating</a>
+                                </div>
+                                <!--Product Rating-->
+
+                                <!--Product qty-->
+                                <div class="qty d-flex pt-2">
+                                    <div class="d-flex font-baskerville w-50">
+                                        <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
+                                        <input type="text" data-id="pro1" class="qty-input border px-2 w-75 bg-light text-center" disabled value="1" placeholder="1">
+                                        <button class="qty-down border bg-light" data-id="pro1"><i class="fas fa-angle-down"></i></button>
+                                    </div>
+                                    <button type="submit" class="font-baskerville btn text-danger px-3 border-right">Delete</button>
+                                    <button type="submit" class="font-baskerville btn text-danger">Save for later</button>
+                                </div>
+                                <!--Product qty-->
+                            </div>
+
+                            <div class="col-sm-2 text-end">
+                                <div class="font-size-20 text-danger font-baskerville">
+                                    $ <span class="product_price">45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Cart item--> 
+                        <!--Cart item--> 
+                        <div class="row border-top py-3 mt-3">
+                            <div class="col-sm-2">
+                                <img src="./img/catalogo/Disparos/metroexodus.jpg" style="height: 120px;" alt="cart1" class="img-fluid rounded">
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="font-roboto font-size-20">Rainbow Six 2020</h5>
+                                <small>By Ubisoft</small>
+                                <!--Product Rating-->
+                                <div class="d-flex">
+                                    <div class="rating text-warning font-size-12">
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="fas fa-star"></i></span>
+                                        <span><i class="far fa-star"></i></span>
+                                    </div>
+                                    <a href="#" class="px-2 font-baskerville font-size-14">20,534 rating</a>
+                                </div>
+                                <!--Product Rating-->
+
+                                <!--Product qty-->
+                                <div class="qty d-flex pt-2">
+                                    <div class="d-flex font-baskerville w-50">
+                                        <button class="qty-up border bg-light"><i class="fas fa-angle-up"></i></button>
+                                        <input type="text" class="qty-input border px-2 w-75 bg-light text-center" disabled value="1" placeholder="1">
+                                        <button class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                    </div>
+                                    <button type="submit" class="font-baskerville btn text-danger px-3 border-right">Delete</button>
+                                    <button type="submit" class="font-baskerville btn text-danger">Save for later</button>
+                                </div>
+                                <!--Product qty-->
+                            </div>
+
+                            <div class="col-sm-2 text-end">
+                                <div class="font-size-20 text-danger font-baskerville">
+                                    $ <span class="product_price">45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Cart item--> 
+                    </div>
+                    <!--Sub total section-->
+                    <div class="col-sm-3">
+                        <div class="sub-total text-center mt-2 border">
+                            <h6 class="font-size-12 font-baskerville text-success py-3"><i class="fas fa-check"></i>Tu orden esta lista para se procesada</h6>
+                            <div class="border-top py-4">
+                                <h5 class="font-baskerville font-size-20">Subtotal (2 items):&nbsp; 
+                                    <span class="text-danger">$ <span class="text-danger" id="deal-price">152.00</span></span>
+                                </h5>
+                                <button type="submit" class="btn btn-warning mt-3">Proceder a comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Sub total section-->
+                </div>
+                <!--Shopping Cart items-->
+            </div>
+        </section>
+        <!--Shopping Cart Section-->
+
+        <!--New Games-->
+        <section id="new-games"> 
+            <div class="container py-5">
+                <h4 class="font-baskerville font-size-20">Nuevos Juegos</h4>
+                <hr>
+                <!--Owl carousel-->
+                <div class="row row-cols-2 row-cols-md-4 g-4 text-white text-center mb-4">
+                    <div class="owl-carousel owl-theme">                 
+                        <div class="item py-2 bg-dark">
+                            <div class="product">
+                                <div class="col" id="">
+                                    <div class="card h-100 bg-dark">
+                                        <img src="../img/catalogo/Accion/isaac.jpg" class="card-img-top img-fluid rounded" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">The Binding of Isaac</h5>
+                                            <p class="card-text">Nicalis, Inc.</p>
+                                            <div class="rating text-warning font-size-12">
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="fas fa-star"></i></span>
+                                                <span><i class="far fa-star"></i></span>
+                                            </div>
+                                            <div class="price py-2">
+                                                <span>$69</span>
+                                            </div>
+                                        </div>
+                                    <a class="btn btn-primary" href="#" role="button">Comprar ahora</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                 
+                    </div>
+                </div>
+                <!--Owl carousel-->
+            </div>
+        </section>
+        <!--New Games-->
+
+    </main>
+    <!--start #main-site-->
+
+    <!--start #footer-->
+    <footer id="footer" class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12">
+                    <h4 class="font-roboto font-size-20">Karsa Games</h4>
+                    <p class="font-size-14 font-baskerville text-white-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo sequi similique mollitia corporis ea, harum repudiandae cupiditate provident! Odit, voluptate.</p>
+                </div>
+                <div class="col-lg-4 col-12">
+                    <h4 class="font-roboto font-size-20">Newslatter</h4>
+                    <form class="row" action="">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="email">
+                        </div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary mb-2">Suscribete</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-2 col-12">
+                    <h4 class="font-roboto font-size-20">Informacion</h4>
+                    <div class="d-flex flex-column flex-wrap">
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Sobre nosotros</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Informacion de envio</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Politica de privacidad</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Terminos y uso</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-12">
+                    <h4 class="font-roboto font-size-20">Cuenta</h4>
+                    <div class="d-flex flex-column flex-wrap">
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Mi cuenta</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Historial de orden</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Wish List</a>
+                        <a href="#" class="font-baskerville font-size-14 text-white-50 pb-1">Newslatters</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright text-center bg-dark text-white py-2">
+        <p class="font-inconsolata font-size-14">&copy; Copyright 2020. Diseñado by <a href="" class="color-second">Alancito</a></p>
+    </div>
+    <!--start #footer-->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!--OwlCarousel Js File-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Isotope filter JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Cusmton Javascript-->
+    <script src="./index.js"></script>
+</body>
+</html>
