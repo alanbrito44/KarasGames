@@ -62,7 +62,7 @@
                             <a class="nav-link" href="#">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
+                            <a class="nav-link" href="register.php">Registrarse</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Coming Soon</a>

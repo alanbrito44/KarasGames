@@ -18,6 +18,13 @@ class User{
         return $result;
     }
 
+    public function insertar($usuario, $contra, $email){
+        $query = "INSERT INTO usuario VALUES ('','$usuario','$contra','$email','CLIENTE')";
+        echo $query;
+        $result = $this->db->con->query($query);
+        return $result;
+    }
+
 }
 
 ?>
