@@ -31,16 +31,6 @@
     <header id="header">
         <div class="strip d-flex justify-content-between px-4 bg-light">
             <p class="font-baskerville font-size-12 text-black-50 m-0">pagina creada por el grupo mera verga en salga</p>
-            <div class="font-baskerville font-size-12">
-                <?php if(!isset($_SESSION["user"])) :?>
-                <a href="login.php" class="px-3 border-end border-start btn btn-dark">Login</a>
-                <?php endif?>
-                <a href="" class="px-3 border-end btn btn-dark">Whishlist (0)</a>
-                <?php if(isset($_SESSION["user"])) :?>
-                <a class="ms-3 btn btn-outline-danger" href="login.php?cerrar=true" class="btn btn-danger">Close sesion</a>
-                <?php echo $usua = $_SESSION["user"]; ?>
-                <?php endif?>
-            </div>
         </div>
 
         <!--navbar principal-->
@@ -58,22 +48,25 @@
                         <li class="nav-item">
                             <a class="nav-link" href="categories.php">Categorias</a>
                         </li>
+                        <?php if(($rol = $_SESSION["rol"] ) == 'ADMINISTRADOR') :?>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                            <a class="nav-link" href="register.php">Dashboard</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">Registrarse</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Coming Soon</a>
-                        </li>
+                        <?php endif?>
                     </ul>
                     <form action="" class="font-size-14 font-baskerville">
                         <a href="cart.php" class="py-2 rounded-pill color-primary-bg btn">
                             <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                             <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('carrito')); ?></span>
                         </a>
-                        
+                        <a href="cart.php" class="px-3 btn btn-dark">Wishlist <?php echo count($product->getData('wishlist')); ?></a>
+                        <?php if(!isset($_SESSION["user"])) :?>
+                        <a href="login.php" class="px-3 btn btn-dark">Login</a>
+                        <?php endif?>
+                        <?php if(isset($_SESSION["user"])) :?>
+                        <a class="px-3 btn btn-danger" href="login.php?cerrar=true" class="btn btn-danger">Close sesion</a>
+                        <?php echo $usua = $_SESSION["user"]; ?>
+                        <?php endif?>
                     </form>
                 </div>
             </div>
