@@ -5,13 +5,15 @@ if($_POST){
     $pass = $_POST["txtPass"];
     $rol = $usur->autenticar($usua, $pass);
 	$usuarioId = $usur->idUsuario($usua);
+	$usuarioIdCarrito = $cart->idUsuarioCar();
 
     if(!isset($_COOKIE["bloqueado".$usua])){
         if($rol != ""){
             $_SESSION["user"] = $usua;
             $_SESSION["rol"] = $rol;
 			$_SESSION["id"] = $usuarioId;
-            echo "<script>alert('Inicio de sesion con $rol exito');
+			$_SESSION["carritoId"] = "$usuarioIdCarrito";
+            echo "<script>alert('Inicio de sesion con $usua exito');
                 window.location.href='index.php';</script>";
         }else{
             if(isset($_COOKIE[$usua])){

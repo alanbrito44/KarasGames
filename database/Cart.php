@@ -117,6 +117,15 @@ class Cart{
             return $result;
         }
     }
+
+    public function idUsuarioCar(){
+        $query = "select usuario_id from carrito";
+        $result = $this->db->con->query($query);
+        while ($fila = mysqli_fetch_assoc($result)){
+            $id = $fila["usuario_id"];
+        }
+        return $id;
+    }
 }
 
 ?>

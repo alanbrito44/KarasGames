@@ -1,5 +1,6 @@
     <?php
         $usuarioId = $_SESSION["id"];
+        $usuarioIdCarrito = $_SESSION["carritoId"];
         if($_SERVER['REQUEST_METHOD']=='POST'){
             if(isset($_POST['delete_cart_submit'])){
                 $deleteRecord = $cart->deleteCart($_POST['juego_id']);
@@ -14,6 +15,9 @@
             if(isset($_POST['buy-submit'])){
                 $cart->buyGames($usuarioId );
             }
+
+            $cart->getCardId($product->getData('carrito'));
+            
         }
     ?>
     <!--Shopping Cart Section-->
@@ -24,6 +28,7 @@
                 <!--Shopping Cart items-->
                 <div class="row">
                     <div class="col-sm-9">
+                        <?php if($usuarioId  == $usuarioIdCarrito ) : ?>
                         <?php
                             foreach($product->getData('carrito') as $item) :
                                 $Cart = $product->getProduct($item['juego_id']);
@@ -83,6 +88,7 @@
                             },$Cart);//cerrando array function                          
                             endforeach;                         
                         ?>
+                         <?php endif?>
                     </div>
                     <!--Sub total section-->
                     <div class="col-sm-3">

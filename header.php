@@ -22,6 +22,18 @@
     <?php
         //require function on php
         require('functions.php');
+
+
+        if(!isset($_SESSION["user"])){
+            $usuarioId = null;
+            $usuarioIdCarrito = null;
+            $rol = null;
+        }else{
+            $usuarioId = $_SESSION["id"];
+            $usuarioIdCarrito = $_SESSION["carritoId"];
+            $rol = $_SESSION["rol"];
+        }
+        
     ?>
 
 </head>
@@ -48,7 +60,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="categories.php">Categorias</a>
                         </li>
-                        <?php if(($rol = $_SESSION["rol"] ) == 'ADMINISTRADOR') :?>
+                        <?php if(($rol) == 'ADMINISTRADOR') :?>
                         <li class="nav-item">
                             <a class="nav-link" href="register.php">Dashboard</a>
                         </li>
@@ -57,7 +69,11 @@
                     <form action="" class="font-size-14 font-baskerville">
                         <a href="cart.php" class="py-2 rounded-pill color-primary-bg btn">
                             <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                            <span class="px-3 py-2 rounded-pill text-dark bg-light"><?php echo count($product->getData('carrito')); ?></span>
+                            <span class="px-3 py-2 rounded-pill text-dark bg-light">
+                            <?php if($usuarioId  == $usuarioIdCarrito ) : ?>
+                            <?php echo count($product->getData('carrito')); ?>
+                            <?php endif?>
+                            </span>
                         </a>
                         <a href="cart.php" class="px-3 btn btn-dark">Wishlist <?php echo count($product->getData('wishlist')); ?></a>
                         <?php if(!isset($_SESSION["user"])) :?>
