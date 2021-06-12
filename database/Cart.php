@@ -118,8 +118,8 @@ class Cart{
         }
     }
 
-    public function idUsuarioCar(){
-        $query = "select usuario_id from carrito";
+    public function idUsuarioCar($usuario_id){
+        $query = "SELECT a.usuario_id from carrito a INNER JOIN productos b ON a.juego_id = b.juego_id WHERE a.usuario_id = {$usuario_id};";
         $result = $this->db->con->query($query);
         while ($fila = mysqli_fetch_assoc($result)){
             $id = $fila["usuario_id"];

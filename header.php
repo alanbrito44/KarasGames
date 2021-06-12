@@ -23,14 +23,12 @@
         //require function on php
         require('functions.php');
 
-
+        // $usuarioId = $_SESSION["id"];
+        // $usuarioIdCarrito = $_SESSION["carritoId"];
+        
         if(!isset($_SESSION["user"])){
-            $usuarioId = null;
-            $usuarioIdCarrito = null;
-            $rol = null;
+            $rol = 'Unknown';
         }else{
-            $usuarioId = $_SESSION["id"];
-            $usuarioIdCarrito = $_SESSION["carritoId"];
             $rol = $_SESSION["rol"];
         }
         
@@ -70,9 +68,9 @@
                         <a href="cart.php" class="py-2 rounded-pill color-primary-bg btn">
                             <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
                             <span class="px-3 py-2 rounded-pill text-dark bg-light">
-                            <?php if($usuarioId  == $usuarioIdCarrito ) : ?>
-                            <?php echo count($product->getData('carrito')); ?>
-                            <?php endif?>
+                            <?php 
+                                    echo count($product->getData('carrito'));
+                            ?>
                             </span>
                         </a>
                         <a href="cart.php" class="px-3 btn btn-dark">Wishlist <?php echo count($product->getData('wishlist')); ?></a>

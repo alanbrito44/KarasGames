@@ -3,15 +3,13 @@
     session_start();
     //incluyendo el header.php
     include('header.php');
-
+    //si no hay usuario iniciado no dejara entrar
     if(!isset($_SESSION["user"])){
-        header("Location:login.php");
+        header("Location:./login.php");
     }else{
         $usua = $_SESSION["user"];
         $rol = $_SESSION["rol"];
     }
-
-    //probando
 ?>
 
 <?php

@@ -23,12 +23,11 @@
     <!--Shopping Cart Section-->
         <section id="cart" class="py-3">
             <div class="container-fluid w-75">
-                <h5 class="font-baskerville font-size-20">Shopping cart</h5>
+                <h5 class="font-baskerville font-size-20">Shopping cart <?php echo $usuarioId,$usuarioIdCarrito ?></h5>
 
                 <!--Shopping Cart items-->
                 <div class="row">
                     <div class="col-sm-9">
-                        <?php if($usuarioId  == $usuarioIdCarrito ) : ?>
                         <?php
                             foreach($product->getData('carrito') as $item) :
                                 $Cart = $product->getProduct($item['juego_id']);
@@ -88,7 +87,6 @@
                             },$Cart);//cerrando array function                          
                             endforeach;                         
                         ?>
-                         <?php endif?>
                     </div>
                     <!--Sub total section-->
                     <div class="col-sm-3">

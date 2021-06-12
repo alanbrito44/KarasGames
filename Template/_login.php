@@ -5,15 +5,15 @@ if($_POST){
     $pass = $_POST["txtPass"];
     $rol = $usur->autenticar($usua, $pass);
 	$usuarioId = $usur->idUsuario($usua);
-	$usuarioIdCarrito = $cart->idUsuarioCar();
+	$usuarioIdCarrito = $cart->idUsuarioCar($usuarioId);
 
     if(!isset($_COOKIE["bloqueado".$usua])){
         if($rol != ""){
             $_SESSION["user"] = $usua;
             $_SESSION["rol"] = $rol;
 			$_SESSION["id"] = $usuarioId;
-			$_SESSION["carritoId"] = "$usuarioIdCarrito";
-            echo "<script>alert('Inicio de sesion con $usua exito');
+			$_SESSION["carritoId"] = $usuarioIdCarrito;
+            echo "<script>alert('Inicio de sesion con $usua,$rol,$usuarioId,$usuarioIdCarrito exito');
                 window.location.href='index.php';</script>";
         }else{
             if(isset($_COOKIE[$usua])){
@@ -30,11 +30,11 @@ if($_POST){
     }else{
         echo "<script>alert('El usuario $usua esta bloqueado por 1 minuto')</script>";
     }
+}
 
-	if(isset($_REQUEST["cerrar"])){
-		session_destroy();
-		header("Location:login.php");
-	}
+if(isset($_REQUEST["cerrar"])){
+	session_destroy();
+	header("Location:login.php");
 }
 
 ?>
