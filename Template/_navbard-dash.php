@@ -18,7 +18,7 @@
                     <a class="nav-link" href="./dashboardUsu.php">Mantenimiento Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reportes</a>
+                    <a class="nav-link" href="./dashboardRep.php">Reportes</a>
                 </li>
             </ul>
         </div>

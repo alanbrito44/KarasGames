@@ -14,6 +14,9 @@ require('database/User.php');
 //require Dashboard class
 require('database/Dashboard.php');
 
+//require Reports class
+require('database/Reports.php');
+
 //DBController object
 $db = new DBController();
 //Product object
@@ -24,5 +27,7 @@ $cart = new Cart($db);
 $usur = new User($db);
 //Dashboard object
 $dash = new Dashboard($db);
+//Reports object
+$rep = new Reports($db);
 
 ?>
