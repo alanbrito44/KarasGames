@@ -113,6 +113,9 @@ class Cart{
                 echo "<script>alert('Compra realizada con exito');
                 window.location.href='./index.php';</script>";
                 //header("Location:".$_SERVER['PHP_SELF']);
+            }else{
+                echo "<script>alert('CARRITO VACIO');
+                window.location.href='./index.php';</script>";
             }
             return $result;
         }

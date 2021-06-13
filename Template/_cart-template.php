@@ -23,7 +23,7 @@
     <!--Shopping Cart Section-->
         <section id="cart" class="py-3">
             <div class="container-fluid w-75">
-                <h5 class="font-baskerville font-size-20">Shopping cart <?php echo $usuarioId,$usuarioIdCarrito ?></h5>
+                <h5 class="font-baskerville font-size-20">Shopping cart</h5>
 
                 <!--Shopping Cart items-->
                 <div class="row">

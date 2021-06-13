@@ -60,7 +60,7 @@ if(isset($_REQUEST["cerrar"])){
 			<div class="col-lg-6 col-md-6 form-container">
 				<div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
 					<div class="logo mt-5 mb-3">
-						<img src="./assets/empty_cart.png" width="150px">
+						<img src="./assets/login.png" width="300px">
 					</div>
 					<div class="heading mb-3">
 						<h4>Inicia sesion con tu cuenta</h4>
