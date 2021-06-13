@@ -43,6 +43,10 @@
                         $nombre_reporte = "JUEGOS DE DISTRIBUIDORA UBISOFT.pdf";
                         $rep->reporte3($nombre_reporte);
                     }
+                    else if ($_POST["comboCategorias"]==4){
+                        $nombre_reporte = "TOTAL RECAUDADO DE VENTAS POR CATEGORIAS.pdf";
+                        $rep->reporte4($nombre_reporte);
+                    }
                     else{
 
                     }

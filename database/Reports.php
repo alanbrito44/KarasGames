@@ -117,6 +117,39 @@ class Reports{
         $reporte->Output($nombre_reporte);
     }
 
+    public function reporte4($nombre_reporte){
+        $sql ="SELECT a.categoria_id, b.categoria_nombre, SUM(a.juego_precio) as total FROM historial a LEFT JOIN categorias b ON a.categoria_id=b.categoria_id GROUP BY b.categoria_id;";
+        $res = $this->db->con->query($sql);
+        $tabla ="<table border='1'><thead><tr><th>CODIGO CATEGORIA</th><th>NOMBRE</th><th>TOTAL</th></tr></thead><tbody>";
+            while($fila = mysqli_fetch_assoc($res)){
+                $tabla .= "<tr>";
+
+                $tabla .= "<td>";
+                $tabla .= $fila['categoria_id'];
+                $tabla .= "</td>";
+
+                $tabla .= "<td>";
+                $tabla .= $fila['categoria_nombre'];
+                $tabla .= "</td>";
+
+                $tabla .= "<td>";
+                $tabla .= $fila['total'];
+                $tabla .= "</td>";
+
+                $tabla .= "</tr>";
+            }
+        $tabla .= "</tbody></table>";
+        $res->close();
+
+        $reporte = new mPDF('c','A4');
+        $logo = "<img src='./assets/reporteBaner.jpg' style='width: 100%; height: 150px;'>";
+        $encabezado= "<H3>TOTAL RECAUDADO DE VENTAS POR CATEGORIAS</H3><hr>";
+        $reporte->WriteHTML($logo);
+        $reporte->WriteHTML($encabezado);
+        $reporte->WriteHTML($tabla);
+        $reporte->Output($nombre_reporte);
+    }
+
 
 
 }
