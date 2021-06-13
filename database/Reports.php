@@ -150,7 +150,38 @@ class Reports{
         $reporte->Output($nombre_reporte);
     }
 
+    public function reporte5($nombre_reporte){
+        $sql ="SELECT a.usuario_id as usuarioid, b.nombre_usuario as nombre , SUM(a.juego_precio) as total FROM historial a LEFT JOIN usuario b ON a.usuario_id=b.usuario_id WHERE a.usuario_id GROUP BY b.usuario_id DESC LIMIT 2;";
+        $res = $this->db->con->query($sql);
+        $tabla ="<table border='1'><thead><tr><th>CODIGO USUARIO</th><th>NOMBRE</th><th>TOTAL</th></tr></thead><tbody>";
+            while($fila = mysqli_fetch_assoc($res)){
+                $tabla .= "<tr>";
 
+                $tabla .= "<td>";
+                $tabla .= $fila['usuarioid'];
+                $tabla .= "</td>";
+
+                $tabla .= "<td>";
+                $tabla .= $fila['nombre'];
+                $tabla .= "</td>";
+
+                $tabla .= "<td>";
+                $tabla .= $fila['total'];
+                $tabla .= "</td>";
+
+                $tabla .= "</tr>";
+            }
+        $tabla .= "</tbody></table>";
+        $res->close();
+
+        $reporte = new mPDF('c','A4');
+        $logo = "<img src='./assets/reporteBaner.jpg' style='width: 100%; height: 150px;'>";
+        $encabezado= "<H3>TOTAL DE VENTAS POR USUARIOS</H3><hr>";
+        $reporte->WriteHTML($logo);
+        $reporte->WriteHTML($encabezado);
+        $reporte->WriteHTML($tabla);
+        $reporte->Output($nombre_reporte);
+    }
 
 }
 

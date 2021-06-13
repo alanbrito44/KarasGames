@@ -47,6 +47,10 @@
                         $nombre_reporte = "TOTAL RECAUDADO DE VENTAS POR CATEGORIAS.pdf";
                         $rep->reporte4($nombre_reporte);
                     }
+                    else if ($_POST["comboCategorias"]==5){
+                        $nombre_reporte = "TOTAL DE VENTAS POR USUARIO.pdf";
+                        $rep->reporte5($nombre_reporte);
+                    }
                     else{
 
                     }
