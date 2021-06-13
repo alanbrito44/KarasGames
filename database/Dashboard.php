@@ -143,7 +143,58 @@ class Dashboard{
         }
     }
 
+    // FUNCIONES PARA USUARIOS //
 
+    public function tablaUsuarios(){
+        $query = "select * from usuario";
+        $result = $this->db->con->query($query);
+        $tabla = "
+        <table class='table table-dark table-striped text-center'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre usuario</th>
+                    <th>Contrasena</th>
+                    <th>Email</th>
+                    <th>ROL</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>";
+        while ($fila = mysqli_fetch_assoc($result)){
+            $tabla .= "<tr>";
+            $tabla .= "<td>".$fila["usuario_id"]."</td>";
+            $tabla .= "<td>".$fila["nombre_usuario"]."</td>";
+            $tabla .= "<td>".$fila["contrasena_usuario"]."</td>";
+            $tabla .= "<td>".$fila["email_usuario"]."</td>";
+            $tabla .= "<td>".$fila["rol_usuario"]."</td>";
+            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["usuario_id"]."','".$fila["nombre_usuario"]."','".$fila["contrasena_usuario"]."','".$fila["email_usuario"]."','".$fila["rol_usuario"]."')\">Modificar</a> / ";
+            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["usuario_id"]."','".$fila["nombre_usuario"]."','".$fila["contrasena_usuario"]."','".$fila["email_usuario"]."','".$fila["rol_usuario"]."')\">Eliminar</a></td>";  
+            $tabla .= "</tr>";
+        }
+        $tabla .= "
+            </tbody>
+        </table>";
+        return $tabla;
+    }
+
+    public function modificarUsu($id,$nombreUsua, $contraUsu, $emailUsu){
+        $query ="update usuario set nombre_usuario = '$nombreUsua', contrasena_usuario = '$contraUsu', email_usuario = '$emailUsu' where usuario_id = '$id' ";
+        if($this->db->con->query($query)){
+            echo "<script>alert('Categoria modifica con exito');</script>";
+        }else{
+            echo "<script>alert('Algo salio mal....');</script>";
+        }
+    }
+
+    public function eliminarUsu($id){
+        $query ="delete from usuario where usuario_id = '$id' ";
+        if($this->db->con->query($query)){
+            echo "<script>alert('Eliminacion de juego realizada con exito');</script>";
+        }else{
+            echo "<script>alert('Algo salio mal....');</script>";
+        }
+    }
 
 
 }
