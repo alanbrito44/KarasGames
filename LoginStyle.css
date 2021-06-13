@@ -1,5 +1,5 @@
 .image-container{
-    background: url('../KarasGames/assets/Slilder1.jpg') center no-repeat;
+    background: url('.assets/fondo1.jpg') center no-repeat;
     background-size: cover;
     height: 100vh;
 }
