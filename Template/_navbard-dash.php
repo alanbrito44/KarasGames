@@ -20,6 +20,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./dashboardRep.php">Reportes</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboardGraf.php">Graficos</a>
+                </li>
             </ul>
         </div>
     </div>
