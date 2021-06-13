@@ -10,22 +10,7 @@
                     <div class="col-sm-6 text-center">
                         <img src="<?php echo $item['juego_imagen']??"./assets/catalogo/Simulacion/motogp.jpg"; ?>" alt="product" class="img-fluid">
                         <div class="row pt-4 font-size-16 font-baskerville">
-                            <div class="col">
-                                <button type="submit" class="bnt btn-danger form-control">Comprar YA</button>
-                            </div>
-                            <div class="col">
-                                <form method="POST">
-                                    <input type="hidden" name="juego_id" value="<?php echo $item['juego_id']??'1'; ?>">
-                                    <input type="hidden" name="usuario_id" value="<?php echo 1; ?>">
-                                    <?php 
-                                        if(in_array($item['juego_id'], $cart->getCardId($product->getData('carrito')) ?? [])){
-                                            echo '<button type="submit" disabled class="btn btn-success form-control">Agregar al carrito</button>';
-                                        }else{
-                                            echo '<button type="submit" name="top_sale_submit" class="btn btn-warning form-control">Agregar al carrito</button>';
-                                        }
-                                    ?>
-                                </form>   
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="col-sm-6 py-5">

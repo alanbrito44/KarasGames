@@ -11,9 +11,9 @@
     include('Template/_products.php');
     /* Include products */
 
-    /* Include top sale */
-    include('Template/_top-sale.php');
-    /* Include top sale */
+    /* Include blogs */
+    include('Template/_blogs.php');
+    /* Include blogs */
 
    
 ?>
