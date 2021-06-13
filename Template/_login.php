@@ -16,6 +16,8 @@ if($_POST){
             echo "<script>alert('Inicio de sesion con $usua,$rol,$usuarioId,$usuarioIdCarrito exito');
                 window.location.href='index.php';</script>";
         }else{
+			echo "<script>alert('Usuario o contrasena incorrecta.... intente nuevamente');
+                window.location.href='index.php';</script>";
             if(isset($_COOKIE[$usua])){
                 $contador= $_COOKIE[$usua];
                 $contador++;

@@ -86,6 +86,54 @@ class Dashboard{
         }
     }
 
+    // FUNCIONES PARA CATEGORIAS //
+    public function tablaCategirias(){
+        $query = "select * from categorias";
+        $result = $this->db->con->query($query);
+        $tabla = "
+        <table class='table table-dark table-striped text-center'>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre categoria</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>";
+        while ($fila = mysqli_fetch_assoc($result)){
+            $tabla .= "<tr>";
+            $tabla .= "<td>".$fila["categoria_id"]."</td>";
+            $tabla .= "<td>".$fila["categoria_nombre"]."</td>";
+            $tabla .= "<td>".$fila["categoria_desc"]."</td>";
+            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Modificar</a> / ";
+            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Eliminar</a></td>";  
+            $tabla .= "</tr>";
+        }
+        $tabla .= "
+            </tbody>
+        </table>";
+        return $tabla;
+    }
+
+    public function insertarCat($nombreCat, $descripcionCat){
+        $query ="insert into categorias values('NULL','$nombreCat','$descripcionCat')";
+        if($this->db->con->query($query)){
+            echo "<script>alert('Categoria nueva ingresada con exito');</script>";
+        }else{
+            echo "<script>alert('Algo salio mal....');</script>";
+        }
+    }
+
+    public function modificarCat($nombreCat, $descripcionCat){
+        $query ="update categorias set categoria_nombre = '$nombreCat', categoria_nombre = '$descripcionCat' where categoria_nombre = '$descripcionCat'";
+        if($this->db->con->query($query)){
+            echo "<script>alert('Categoria modifica con exito');</script>";
+        }else{
+            echo "<script>alert('Algo salio mal....');</script>";
+        }
+    }
+
 }
 
 ?>
