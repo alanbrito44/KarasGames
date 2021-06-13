@@ -13,14 +13,15 @@ if($_POST){
 	//modificar juego
     if(isset($_POST["btnModificar"])){
 
+        $id = $_REQUEST["txtId"];
         $nombre = $_REQUEST["txtNombreCat"];
         $descripcion = $_REQUEST["txtDescripCat"];
 		
         if($_REQUEST["modificacion"]=="si"){
-            $dash->modificarCat($nombre,$descripcion);
-            header("location:./dashboardPro.php");
+            $dash->modificarCat($id,$nombre,$descripcion);
+            header("location:./dashboardCat.php");
         }else{
-            header("location:./dashboardPro.php");
+            header("location:./dashboardCat.php");
         }
 			
     }
@@ -33,9 +34,9 @@ if($_POST){
 		
 		if($_REQUEST["eliminacion"]=="si"){
             $dash->eliminar($codigo);
-            header("location:./dashboardPro.php");
+            header("location:./dashboardCat.php");
         }else{
-            header("location:./dashboardPro.php");
+            header("location:./dashboardCat.php");
         }	
     }
     //eliminar juego
@@ -43,11 +44,69 @@ if($_POST){
 }
 ?>
 
+<script type="text/javascript">
+
+	//modificar juego
+	function cargarMo(id,nombre, descripcion){
+            document.getElementById("txtId").value=id;
+            document.getElementById("txtNombreCat").value=nombre;
+            document.getElementById("txtDescripCat").value=descripcion;
+            
+            $("#btnEliminar").hide();
+            $("#btnModificar").show();
+            $("#btnGuardar").hide();
+    }
+        function confirmarMo(){
+            if(confirm("¿Estas seguro de querer modificar el registro?")){
+                document.getElementById("modificacion").value="si";
+            }else{
+                document.getElementById("modificacion").value="no";
+            }
+        }
+        //modificar juego
+
+        function cargarDel(distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
+			catagegoria--;
+            document.getElementById("txtDistribuidora").value=distribuidora;
+            document.getElementById("txtTitulo").value=titulo;
+            document.getElementById("txtPrecio").value=precio;
+            document.getElementById("FileImagen").selectedIndex=imagen;
+			document.getElementById("txtFecha").value=fecha;
+            document.getElementById("cmbCodCat").selectedIndex=catagegoria;
+            document.getElementById("txtDescripcion").value=descripcion;
+			document.getElementById("txtCodigo").value=codigo;
+            
+            $("#btnEliminar").show();
+            $("#btnModificar").hide();
+            $("#btnGuardar").hide();
+    }
+
+    function confirmarDel(){
+            if(confirm("¿Estas seguro de querer Eliminar el registro?")){
+                document.getElementById("eliminacion").value="si";
+            }else{
+                document.getElementById("eliminacion").value="no";
+            }
+        }
+
+        //nuevo juego
+        $(document).ready(function(){
+            $("#btnNuevo").on("click", function(){
+                $('input[type="text"]').val('');
+                $("#btnEliminar").hide();
+                $("#btnModificar").hide();
+                $("#btnGuardar").show();
+            });
+        });
+        //nuevo juego
+        
+
+</script>
 
 
 
 <button type="button" id="btnNuevo" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Nuevo juego
+    Nueva categoria
 </button>
 
 <br>
@@ -70,6 +129,9 @@ if($_POST){
         </div>
         <div class="modal-body">
             <form action="dashboardCat.php" method="post" enctype="multipart/form-data" id="formuarlio">
+
+                <label class="label label-danger">ID Categoria</label><br>
+                <input type="text" name="txtId" id="txtId" class="form-control" readonly="true" required><br>
 
                 <label class="label label-danger">Nombre de Categoria</label><br>
                 <input type="text" name="txtNombreCat" id="txtNombreCat" class="form-control" required><br>

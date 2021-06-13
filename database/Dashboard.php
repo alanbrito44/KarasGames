@@ -39,8 +39,8 @@ class Dashboard{
             $tabla .= "<td><img src='".$fila["juego_imagen"]."' style='width: 50px; height: 50px;'></td>";
             $tabla .= "<td>".$fila["juego_registro"]."</td>";
             $tabla .= "<td>".$fila["categoria_id"]."</td>";
-            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["juego_distribuidora"]."','".$fila["juego_nombre"]."','".$fila["juego_precio"]."','".$fila["juego_imagen"]."','".$fila["juego_registro"]."','".$fila["categoria_id"]."','".$fila["juego_descripcion"]."','".$fila["juego_cod"]."')\">Modificar</a> / ";
-            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["juego_distribuidora"]."','".$fila["juego_nombre"]."','".$fila["juego_precio"]."','".$fila["juego_imagen"]."','".$fila["juego_registro"]."','".$fila["categoria_id"]."','".$fila["juego_descripcion"]."','".$fila["juego_cod"]."')\">Eliminar</a></td>";  
+            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["juego_id"]."','".$fila["juego_distribuidora"]."','".$fila["juego_nombre"]."','".$fila["juego_precio"]."','".$fila["juego_imagen"]."','".$fila["juego_registro"]."','".$fila["categoria_id"]."','".$fila["juego_descripcion"]."','".$fila["juego_cod"]."')\">Modificar</a> / ";
+            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["juego_id"]."','".$fila["juego_distribuidora"]."','".$fila["juego_nombre"]."','".$fila["juego_precio"]."','".$fila["juego_imagen"]."','".$fila["juego_registro"]."','".$fila["categoria_id"]."','".$fila["juego_descripcion"]."','".$fila["juego_cod"]."')\">Eliminar</a></td>";  
             $tabla .= "</tr>";
         }
         $tabla .= "
@@ -68,8 +68,8 @@ class Dashboard{
         }
     }
 
-    public function modificar($distribuidora,$titulo,$precio,$imagen,$fecha,$codigo,$descripcion,$codigoJue){
-        $query ="update productos set juego_distribuidora = '$distribuidora', juego_nombre = '$titulo', juego_precio = '$precio', juego_imagen = '$imagen', juego_registro = '$fecha', categoria_id = '$codigo', juego_descripcion = '$descripcion' where juego_cod = '$codigoJue)' ";
+    public function modificar($id,$distribuidora,$titulo,$precio,$imagen,$fecha,$codigo,$descripcion,$codigoJue){
+        $query ="update productos set juego_distribuidora = '$distribuidora', juego_nombre = '$titulo', juego_precio = '$precio', juego_imagen = '$imagen', juego_registro = '$fecha', categoria_id = '$codigo', juego_descripcion = '$descripcion', juego_cod = '$codigoJue' where juego_id = '$id)' ";
         if($this->db->con->query($query)){
             echo "<script>alert('Cambios realizados con exito');</script>";
         }else{
@@ -77,8 +77,8 @@ class Dashboard{
         }
     }
 
-    public function eliminar($codigoJue){
-        $query ="delete from productos where juego_cod = '$codigoJue)' ";
+    public function eliminar($id){
+        $query ="delete from productos where juego_id = '$id' ";
         if($this->db->con->query($query)){
             echo "<script>alert('Eliminacion de juego realizada con exito');</script>";
         }else{
@@ -106,8 +106,8 @@ class Dashboard{
             $tabla .= "<td>".$fila["categoria_id"]."</td>";
             $tabla .= "<td>".$fila["categoria_nombre"]."</td>";
             $tabla .= "<td>".$fila["categoria_desc"]."</td>";
-            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Modificar</a> / ";
-            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Eliminar</a></td>";  
+            $tabla .= "<td><a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarMo('".$fila["categoria_id"]."','".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Modificar</a> / ";
+            $tabla .= "<a data-bs-toggle=\"modal\" data-bs-target=\"#staticBackdrop\" class='btn btn-primary'  onclick=\"javascript:cargarDel('".$fila["categoria_id"]."','".$fila["categoria_nombre"]."','".$fila["categoria_desc"]."')\">Eliminar</a></td>";  
             $tabla .= "</tr>";
         }
         $tabla .= "
@@ -125,14 +125,17 @@ class Dashboard{
         }
     }
 
-    public function modificarCat($nombreCat, $descripcionCat){
-        $query ="update categorias set categoria_nombre = '$nombreCat', categoria_nombre = '$descripcionCat' where categoria_nombre = '$descripcionCat'";
+    public function modificarCat($id,$nombreCat, $descripcionCat){
+        $query ="update categorias set categoria_nombre = '$nombreCat', categoria_desc = '$descripcionCat' where categoria_id = '$id' ";
         if($this->db->con->query($query)){
             echo "<script>alert('Categoria modifica con exito');</script>";
         }else{
             echo "<script>alert('Algo salio mal....');</script>";
         }
     }
+
+
+
 
 }
 

@@ -35,6 +35,7 @@ if($_POST){
         move_uploaded_file($archivo,$ruta);
         //subir imagen a la base de datos
 
+        $id = $_REQUEST["txtId"];
 		$distribuidora = $_REQUEST["txtDistribuidora"];
         $titulo = $_REQUEST["txtTitulo"];
         $precio = $_REQUEST["txtPrecio"];
@@ -45,7 +46,7 @@ if($_POST){
 		$codigo = $_REQUEST["txtCodigo"];
 		
 		if($_REQUEST["modificacion"]=="si"){
-            $dash->modificar($distribuidora,$titulo,$precio,$ruta,$fecha,$categoria,$descripcion,$codigo);
+            $dash->modificar($id,$distribuidora,$titulo,$precio,$ruta,$fecha,$categoria,$descripcion,$codigo);
             header("location:./dashboardPro.php");
         }else{
             header("location:./dashboardPro.php");
@@ -56,10 +57,11 @@ if($_POST){
     //eliminar juego
     if(isset($_POST["btnEliminar"])){
 
-		$codigo = $_REQUEST["txtCodigo"];
+		$id = $_REQUEST["txtId"];
+        $codigo = $_REQUEST["txtCodigo"];
 		
 		if($_REQUEST["eliminacion"]=="si"){
-            $dash->eliminar($codigo);
+            $dash->eliminar($id);
             header("location:./dashboardPro.php");
         }else{
             header("location:./dashboardPro.php");
@@ -72,8 +74,9 @@ if($_POST){
 <script type="text/javascript">
 
 	//modificar juego
-	function cargarMo(distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
+	function cargarMo(id,distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
 			catagegoria--;
+            document.getElementById("txtId").value=id;
             document.getElementById("txtDistribuidora").value=distribuidora;
             document.getElementById("txtTitulo").value=titulo;
             document.getElementById("txtPrecio").value=precio;
@@ -86,7 +89,7 @@ if($_POST){
             $("#btnEliminar").hide();
             $("#btnModificar").show();
             $("#btnGuardar").hide();
-    }
+        }
         function confirmarMo(){
             if(confirm("¿Estas seguro de querer modificar el registro?")){
                 document.getElementById("modificacion").value="si";
@@ -96,8 +99,9 @@ if($_POST){
         }
         //modificar juego
 
-        function cargarDel(distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
+        function cargarDel(id,distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
 			catagegoria--;
+            document.getElementById("txtId").value=id;
             document.getElementById("txtDistribuidora").value=distribuidora;
             document.getElementById("txtTitulo").value=titulo;
             document.getElementById("txtPrecio").value=precio;
@@ -110,9 +114,9 @@ if($_POST){
             $("#btnEliminar").show();
             $("#btnModificar").hide();
             $("#btnGuardar").hide();
-    }
+        }
 
-    function confirmarDel(){
+        function confirmarDel(){
             if(confirm("¿Estas seguro de querer Eliminar el registro?")){
                 document.getElementById("eliminacion").value="si";
             }else{
@@ -157,6 +161,9 @@ if($_POST){
         </div>
         <div class="modal-body">
             <form action="dashboardPro.php" method="post" enctype="multipart/form-data" id="formuarlio">
+
+                <label class="label label-danger">ID Juego</label><br>
+                <input type="text" name="txtId" id="txtId" class="form-control" readonly="true" required><br>
 
                 <label class="label label-danger">Codigo juego</label><br>
                 <input type="text" name="txtCodigo" id="txtCodigo" class="form-control" required><br>
