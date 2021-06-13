@@ -42,17 +42,15 @@ if($rol == "CLIENTE"){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Banco Azul | Registrar usuario</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="../CSS/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!--Custom CSS File-->
     <link rel="stylesheet" href="LoginStyle.css">
 </head>
 <body>
+	<?php if(($rol) == 'ADMINISTRADOR') :?>
+		<?php
+			include('Template/_navbard-dash.php');
+		?>
+	<?php endif?>
 	<!--Formulario-->
 	<div class="container-fluid">
 		<div class="row">
