@@ -22,7 +22,7 @@
 <!--Special price-->
     <section id="special-price"> 
         <div class="container">
-            <h4 class="font-baskerville font-size-20 mt-5">Special Price</h4>
+            <h4 class="font-baskerville font-size-20 mt-5">Categoria de juegos</h4>
             <hr>
             <div id="filters" class="button-group text-end font-baskerville font-size-16">
                 <button class="btn btn-danger is-checked" data-filter="">Todos los juegos</button>

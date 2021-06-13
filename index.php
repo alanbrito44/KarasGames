@@ -14,10 +14,6 @@
     include('Template/_top-sale.php');
     /* Include top sale */
 
-    /* Include special price */
-    include('Template/_special-price.php');
-    /* Include special price */
-
     /* Include banner add */
     include('Template/_banner-adds.php');
     /* Include banner add */
