@@ -196,6 +196,14 @@ class Dashboard{
         }
     }
 
+    //REGISTRO DE ADMINISTRORES//
+
+    public function insertarAdmin($usuario, $contra, $email){
+        $query = "INSERT INTO usuario VALUES ('','$usuario','$contra','$email','ADMINISTRADOR')";
+        $result = $this->db->con->query($query);
+        return $result;
+    }
+
 
 }
 

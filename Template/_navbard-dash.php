@@ -6,7 +6,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Crear administrador</a>
+                    <a class="nav-link" href="./dashboardReg.php">Crear administrador</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./dashboardPro.php">Mantenimiento Productos</a>

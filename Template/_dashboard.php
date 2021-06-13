@@ -1,5 +1,4 @@
 <style>
-
 @font-face {
     font-family: "CuteBold";
     src: url("font/TheHistoriaDemo.ttf");
@@ -23,7 +22,6 @@ body{
     font-weight: bold;
 
 }
-
 </style>
 
 <p class="bien">BIENVENIDO AL DASHBOARD</p>
