@@ -9,6 +9,9 @@
                     <a class="nav-link" href="./dashboardReg.php">Crear administrador</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="./register.php">Crear cliente</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="./dashboardPro.php">Mantenimiento Productos</a>
                 </li>
                 <li class="nav-item">

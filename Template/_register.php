@@ -27,6 +27,16 @@ if($_POST){
     }
 }
 
+if(!isset($_SESSION["user"])){
+	$rol = 'Unknown';
+}else{
+	$rol = $_SESSION["rol"];
+}
+
+if($rol == "CLIENTE"){
+	header("Location:./index	.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +87,9 @@ if($_POST){
 						</div>
 						<div class="text-left mb-3">
 							<button type="submit" class="btn" name="btnGuardar" id="btnGuardar">Registrarse</button>
-							<a class="ms-3 btn btn-danger" href="./login.php" class="btn btn-danger">Loguear</a>
+							<?php if(($rol) != 'ADMINISTRADOR') :?>
+								<a class="ms-3 btn btn-danger" href="./login.php" class="btn btn-danger">Loguear</a>
+							<?php endif?>
 						</div>
 					</form>
 					<p>SI YA TIENES UNA CUENTA LOGUEATE</p>

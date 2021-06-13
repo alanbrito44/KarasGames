@@ -13,7 +13,7 @@ if($_POST){
             $_SESSION["rol"] = $rol;
 			$_SESSION["id"] = $usuarioId;
 			$_SESSION["carritoId"] = $usuarioIdCarrito;
-            echo "<script>alert('Inicio de sesion con $usua,$rol,$usuarioId,$usuarioIdCarrito exito');
+            echo "<script>alert('Inicio de sesion con exito');
                 window.location.href='index.php';</script>";
         }else{
 			echo "<script>alert('Usuario o contrasena incorrecta.... intente nuevamente');
