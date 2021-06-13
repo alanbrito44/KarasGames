@@ -43,7 +43,7 @@
     <!--start #header-->
     <header id="header">
         <div class="strip d-flex justify-content-between px-4 bg-light">
-            <p class="font-baskerville font-size-12 text-black-50 m-0">pagina creada por el grupo mera verga en salga</p>
+            <p class="font-baskerville font-size-12 text-black-50 m-0">Proyecto final materia DAW</p>
         </div>
 
         <!--navbar principal-->
@@ -62,9 +62,9 @@
                             <a class="nav-link" href="categories.php">Categorias</a>
                         </li>
                         <?php if(($rol) == 'ADMINISTRADOR') :?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.php">Dashboard</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="dashboard.php">Dashboard</a>
+                            </li>
                         <?php endif?>
                     </ul>
                     <form action="" class="font-size-14 font-baskerville">
@@ -81,7 +81,7 @@
                         <a href="login.php" class="px-3 btn btn-dark">Login</a>
                         <?php endif?>
                         <?php if(isset($_SESSION["user"])) :?>
-                        <a class="px-3 btn btn-danger" href="login.php?cerrar=true" class="btn btn-danger">Close sesion</a>
+                        <a class="px-3 btn btn-danger" href="login.php?cerrar=true" class="btn btn-danger">Cerrar Sesion</a>
                         <?php echo $usua = $_SESSION["user"]; ?>
                         <?php endif?>
                     </form>

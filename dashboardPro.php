@@ -17,7 +17,7 @@
 ?>
 
 <?php
-
+    include('Template/_navbard-dash.php');
     include('Template/_product-Dashboard.php');
 
 ?>

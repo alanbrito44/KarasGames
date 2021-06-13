@@ -18,6 +18,8 @@
 
 <?php
 
+    include('Template/_navbard-dash.php');
+    //include mantenimiento de categorias
     include('Template/_categorie-Dashboard.php');
 
 ?>

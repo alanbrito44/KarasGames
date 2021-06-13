@@ -13,12 +13,15 @@
         $usua = $_SESSION["user"];
         $rol = $_SESSION["rol"];
     }
-
 ?>
 
 <?php
+
     include('Template/_navbard-dash.php');
-    include('Template/_usuario-Dashboard.php');
+
+    /* Include special price */
+    include('Template/_dashboard.php');
+    /* Include special price */
 
 ?>
 
