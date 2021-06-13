@@ -134,6 +134,15 @@ class Dashboard{
         }
     }
 
+    public function eliminarCat($id){
+        $query ="delete from categorias where categoria_id = '$id' ";
+        if($this->db->con->query($query)){
+            echo "<script>alert('Eliminacion de juego realizada con exito');</script>";
+        }else{
+            echo "<script>alert('Algo salio mal....');</script>";
+        }
+    }
+
 
 
 

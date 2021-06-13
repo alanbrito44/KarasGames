@@ -30,10 +30,10 @@ if($_POST){
     //eliminar juego
     if(isset($_POST["btnEliminar"])){
 
-		$codigo = $_REQUEST["txtCodigo"];
+		$id = $_REQUEST["txtId"];
 		
 		if($_REQUEST["eliminacion"]=="si"){
-            $dash->eliminar($codigo);
+            $dash->eliminarCat($id);
             header("location:./dashboardCat.php");
         }else{
             header("location:./dashboardCat.php");
@@ -65,16 +65,11 @@ if($_POST){
         }
         //modificar juego
 
-        function cargarDel(distribuidora, titulo, precio, imagen, fecha, catagegoria, descripcion,codigo){
-			catagegoria--;
-            document.getElementById("txtDistribuidora").value=distribuidora;
-            document.getElementById("txtTitulo").value=titulo;
-            document.getElementById("txtPrecio").value=precio;
-            document.getElementById("FileImagen").selectedIndex=imagen;
-			document.getElementById("txtFecha").value=fecha;
-            document.getElementById("cmbCodCat").selectedIndex=catagegoria;
-            document.getElementById("txtDescripcion").value=descripcion;
-			document.getElementById("txtCodigo").value=codigo;
+        function cargarDel(id,nombre, descripcion){
+			document.getElementById("txtId").value=id;
+            document.getElementById("txtNombreCat").value=nombre;
+            document.getElementById("txtDescripCat").value=descripcion;
+            
             
             $("#btnEliminar").show();
             $("#btnModificar").hide();
