@@ -16,7 +16,7 @@
         });
     </script>
 
-<h4>Reporte parametrizado</h4><hr>
+<h4>REPORTES DE KARSA GAMES</h4><hr>
     <div class="container text-center">
         <div class="row">
             <div class="col-12">
@@ -32,24 +32,16 @@
                 if($_POST){
                     $parametro = $_POST["comboCategorias"];
                     if ($_POST["comboCategorias"]==1){
-                        $nombre_reporte = "Reporte de productos de existencia minima.pdf";
+                        $nombre_reporte = "TOP 5 JUEGOS MAS BARATOS.pdf";
                         $rep->reporte1($nombre_reporte);
                     }
                     else if ($_POST["comboCategorias"]==2){
-                        $nombre_reporte = "Reportes de Top 10 de productos mas vendidos.pdf";
-                        $re->reporte2($nombre_reporte);
+                        $nombre_reporte = "TOP 5 JUEGOS MAS CAROS.pdf";
+                        $rep->reporte2($nombre_reporte);
                     }
                     else if ($_POST["comboCategorias"]==3){
-                        $nombre_reporte = "Reporte de Top 5 de productos menos vendidos.pdf";
-                        $re->reporte3($nombre_reporte);
-                    }
-                    else if ($_POST["comboCategorias"]==4){
-                        $nombre_reporte = "Reporte de productos del proveedor Exotic Liquids.pdf";
-                        $re->reporte4($nombre_reporte);
-                    }
-                    else if ($_POST["comboCategorias"]==5){
-                        $nombre_reporte = "Reporte los productos mas caros y los menos vendidos.pdf";
-                        $re->reporte5($nombre_reporte);
+                        $nombre_reporte = "JUEGOS DE DISTRIBUIDORA UBISOFT.pdf";
+                        $rep->reporte3($nombre_reporte);
                     }
                     else{
 
