@@ -35,7 +35,7 @@ class Reports{
         $res->close();
 
         $reporte = new mPDF('c','A4');
-        $logo = "<img src='../img/logo.png' style='width: 200px; height: 75px;'>";
+        $logo = "<img src='./assets/reporteBaner.jpg' style='width: 100%; height: 150px;'>";
         $encabezado= "<H3>TOP 5 JUEGOS MAS BARATOS</H3><hr>";
         $reporte->WriteHTML($logo);
         $reporte->WriteHTML($encabezado);
@@ -68,7 +68,7 @@ class Reports{
         $res->close();
 
         $reporte = new mPDF('c','A4');
-        $logo = "<img src='../img/logo.png' style='width: 200px; height: 75px;'>";
+        $logo = "<img src='./assets/reporteBaner.jpg' style='width: 100%; height: 150px;'>";
         $encabezado= "<H3>TOP 5 JUEGOS MAS CAROS</H3><hr>";
         $reporte->WriteHTML($logo);
         $reporte->WriteHTML($encabezado);
@@ -109,7 +109,7 @@ class Reports{
         $res->close();
 
         $reporte = new mPDF('c','A4');
-        $logo = "<img src='../img/logo.png' style='width: 200px; height: 75px;'>";
+        $logo = "<img src='./assets/reporteBaner.jpg' style='width: 100%; height: 150px;'>";
         $encabezado= "<H3>TOP 5 JUEGOS MAS CAROS</H3><hr>";
         $reporte->WriteHTML($logo);
         $reporte->WriteHTML($encabezado);
