@@ -6,6 +6,7 @@ if($_POST){
     $rol = $usur->autenticar($usua, $pass);
 	$usuarioId = $usur->idUsuario($usua);
 	$usuarioIdCarrito = $cart->idUsuarioCar($usuarioId);
+	$cart->limpiarCarrito();
 
     if(!isset($_COOKIE["bloqueado".$usua])){
         if($rol != ""){

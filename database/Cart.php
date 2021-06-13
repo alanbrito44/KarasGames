@@ -129,6 +129,12 @@ class Cart{
         }
         return $id;
     }
+
+    public function limpiarCarrito(){
+        $query = "DELETE FROM carrito";
+        $result = $this->db->con->query($query);
+        return $result;
+    }
 }
 
 ?>
